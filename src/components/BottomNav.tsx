@@ -1,4 +1,4 @@
-import { Home, MapPin, CreditCard, User } from "lucide-react";
+import { Home, Map, CreditCard, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface BottomNavProps {
@@ -8,7 +8,7 @@ interface BottomNavProps {
 
 const navItems = [
   { id: "home", icon: Home, label: "Início" },
-  { id: "stops", icon: MapPin, label: "Paradas" },
+  { id: "map", icon: Map, label: "Mapa" },
   { id: "card", icon: CreditCard, label: "Cartão" },
   { id: "profile", icon: User, label: "Perfil" },
 ];

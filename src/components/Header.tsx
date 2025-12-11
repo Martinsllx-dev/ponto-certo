@@ -1,4 +1,4 @@
-import { MapPin, Bell, Menu } from "lucide-react";
+import { MapPin, Bell, Menu, Bus } from "lucide-react";
 import { Button } from "./ui/button";
 
 export const Header = () => {
@@ -7,13 +7,13 @@ export const Header = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl transit-gradient flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">O</span>
+            <Bus className="w-5 h-5 text-primary-foreground" />
           </div>
           <div>
-            <h1 className="font-bold text-foreground">BusTrack</h1>
+            <h1 className="font-bold text-foreground">Aprimora Tech</h1>
             <div className="flex items-center gap-1 text-xs text-muted-foreground">
               <MapPin className="w-3 h-3" />
-              <span>São Paulo, SP</span>
+              <span>Contagem, MG</span>
             </div>
           </div>
         </div>

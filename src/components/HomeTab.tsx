@@ -4,48 +4,57 @@ import { Button } from "./ui/button";
 import { BusCard } from "./BusCard";
 import { NearbyStop } from "./NearbyStop";
 
+// Linhas de ônibus reais de Contagem
 const mockBuses = [
   {
-    lineNumber: "2012",
-    lineName: "Terminal Bandeira",
-    arrivalTime: 2,
-    destination: "Pq. Dom Pedro II",
-    distance: "150m",
+    lineNumber: "5201",
+    lineName: "Shopping Contagem",
+    arrivalTime: 3,
+    destination: "Terminal Eldorado",
+    distance: "120m",
     isAccessible: true,
   },
   {
-    lineNumber: "875A",
-    lineName: "Metrô Tucuruvi",
+    lineNumber: "5103",
+    lineName: "Eldorado - Centro",
     arrivalTime: 5,
-    destination: "Terminal Santana",
-    distance: "150m",
+    destination: "Centro de Contagem",
+    distance: "120m",
     isAccessible: true,
   },
   {
-    lineNumber: "1780",
-    lineName: "Lapa - Brás",
+    lineNumber: "5505",
+    lineName: "Ressaca - Industrial",
     arrivalTime: 8,
-    destination: "Estação Brás",
-    distance: "150m",
+    destination: "Cidade Industrial",
+    distance: "120m",
     isAccessible: false,
+  },
+  {
+    lineNumber: "5302",
+    lineName: "Petrolândia",
+    arrivalTime: 12,
+    destination: "Terminal Petrolândia",
+    distance: "120m",
+    isAccessible: true,
   },
 ];
 
 const mockStops = [
   {
-    name: "Av. Paulista, 1578",
-    distance: "150m do seu local",
-    lines: ["2012", "875A", "1780", "917H"],
+    name: "Av. João César de Oliveira, 1200",
+    distance: "120m do seu local",
+    lines: ["5201", "5103", "5505", "5302"],
   },
   {
-    name: "R. Augusta, 2023",
-    distance: "320m do seu local",
-    lines: ["875A", "6291", "908T"],
-  },
-  {
-    name: "R. Consolação, 1200",
+    name: "Terminal Eldorado",
     distance: "450m do seu local",
-    lines: ["2012", "177H", "875A"],
+    lines: ["5201", "5103", "5401", "5602"],
+  },
+  {
+    name: "Shopping Contagem",
+    distance: "800m do seu local",
+    lines: ["5201", "5302", "5505"],
   },
 ];
 
@@ -57,7 +66,6 @@ export const HomeTab = () => {
     setIsRefreshing(true);
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    // Simulate updated arrival times
     setBuses(prev => prev.map(bus => ({
       ...bus,
       arrivalTime: Math.max(1, bus.arrivalTime - Math.floor(Math.random() * 2)),
@@ -66,7 +74,6 @@ export const HomeTab = () => {
     setIsRefreshing(false);
   };
 
-  // Auto-refresh every 30 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setBuses(prev => prev.map(bus => ({
@@ -99,7 +106,7 @@ export const HomeTab = () => {
             </div>
             <div>
               <p className="text-sm font-medium text-foreground">Localização atual</p>
-              <p className="text-xs text-muted-foreground">Av. Paulista, próx. ao MASP</p>
+              <p className="text-xs text-muted-foreground">Eldorado, Contagem - MG</p>
             </div>
           </div>
           <Button 
