@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CreditCard, Plus, History, QrCode, Wifi } from "lucide-react";
+import { Plus, History, QrCode, Wifi, Bus } from "lucide-react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 
@@ -36,7 +36,10 @@ export const TransportCard = ({ balance, cardNumber, cardName, onRecharge }: Tra
               <div className="relative flex items-start justify-between">
                 <div>
                   <p className="text-primary-foreground/70 text-xs font-medium">Cartão de Transporte</p>
-                  <h2 className="text-primary-foreground font-bold text-xl mt-1">BusTrack</h2>
+                  <div className="flex items-center gap-2 mt-1">
+                    <Bus className="w-5 h-5 text-primary-foreground" />
+                    <h2 className="text-primary-foreground font-bold text-xl">Aprimora Tech</h2>
+                  </div>
                 </div>
                 <div className="flex items-center gap-2">
                   <Wifi className="w-5 h-5 text-primary-foreground/80" />

@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { TransportCard } from "./TransportCard";
 import { RechargeModal } from "./RechargeModal";
-import { TrendingUp, TrendingDown, Bus } from "lucide-react";
+import { TrendingUp, Bus } from "lucide-react";
 
 const recentTransactions = [
-  { id: 1, type: "trip", description: "Linha 2012 - Terminal Bandeira", amount: -4.40, date: "Hoje, 08:32" },
-  { id: 2, type: "trip", description: "Linha 875A - Metrô Tucuruvi", amount: -4.40, date: "Hoje, 07:15" },
+  { id: 1, type: "trip", description: "Linha 5201 - Shopping Contagem", amount: -4.40, date: "Hoje, 08:32" },
+  { id: 2, type: "trip", description: "Linha 5103 - Eldorado - Centro", amount: -4.40, date: "Hoje, 07:15" },
   { id: 3, type: "recharge", description: "Recarga PIX", amount: 50.00, date: "Ontem, 19:45" },
-  { id: 4, type: "trip", description: "Linha 1780 - Lapa - Brás", amount: -4.40, date: "Ontem, 18:20" },
-  { id: 5, type: "trip", description: "Linha 2012 - Terminal Bandeira", amount: -4.40, date: "Ontem, 08:10" },
+  { id: 4, type: "trip", description: "Linha 5505 - Ressaca", amount: -4.40, date: "Ontem, 18:20" },
+  { id: 5, type: "trip", description: "Linha 5302 - Petrolândia", amount: -4.40, date: "Ontem, 08:10" },
 ];
 
 export const CardTab = () => {
@@ -24,7 +24,7 @@ export const CardTab = () => {
       <TransportCard
         balance={balance}
         cardNumber="5234567890123456"
-        cardName="João Silva"
+        cardName="Everton"
         onRecharge={() => setIsRechargeOpen(true)}
       />
       

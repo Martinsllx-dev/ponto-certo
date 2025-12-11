@@ -1,13 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { BottomNav } from "@/components/BottomNav";
 import { HomeTab } from "@/components/HomeTab";
 import { CardTab } from "@/components/CardTab";
-import { StopsTab } from "@/components/StopsTab";
+import { MapTab } from "@/components/MapTab";
 import { ProfileTab } from "@/components/ProfileTab";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("home");
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate("/login");
+    }
+  }, [isAuthenticated, navigate]);
+
+  if (!isAuthenticated) {
+    return null;
+  }
 
   const renderContent = () => {
     switch (activeTab) {
@@ -15,8 +29,8 @@ const Index = () => {
         return <HomeTab />;
       case "card":
         return <CardTab />;
-      case "stops":
-        return <StopsTab />;
+      case "map":
+        return <MapTab />;
       case "profile":
         return <ProfileTab />;
       default:
